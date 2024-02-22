@@ -6,7 +6,14 @@ expectations:
 actions:
 
   generate_study_population:
-    run: cohortextractor:latest generate_cohort --output-format csv.gz --study-definition study_definition
+    run: ehrql:v1 generate-dataset analysis/dataset_definition.py --output output/input.csv.gz
     outputs:
       highly_sensitive:
         cohort: output/input.csv.gz
+
+  generate_measures:
+    run: ehrql:v1 generate-measures analysis/measure_definition.py --output output/measures.csv
+    outputs:
+      moderately_sensitive:
+        measures: output/measures.csv
+

@@ -3,7 +3,7 @@ from ehrql.tables.core import patients, medications
 from ehrql import INTERVAL, case, create_measures, months, when
 
 measures = create_measures()
-measures.configure_disclosure_control(enabled=False) #disables sup[resssing/rouding - maybe set to true for actual exp?]
+measures.configure_disclosure_control(enabled=True) #disables sup[resssing/rouding - maybe set to true for actual exp?]
 
 
 sodium_val_codes =['13295911000001108','13295911000001108'] #will need a full codelist 
@@ -26,12 +26,12 @@ sodium_val_rx = rx_in_interval.where(
     medications.dmd_code.is_in(sodium_val_codes))
 
 measures.define_measure(
-    name="atorva_80",
-    numerator=has_recorded_sex,
-    denominator=sodium_val_rx.exists_for_patient() & has_recorded_sex,
+    name="sodval_test",
+    numerator=sodium_val_rx.exists_for_patient()  &has_recorded_sex,
+    denominator= has_recorded_sex,
     group_by={
         "sex": patients.sex,
         "age_band": age_band
     },
-    intervals=months(3).starting_on("2010-01-01"),
+    intervals=months(24).starting_on("2010-01-01"),
 )

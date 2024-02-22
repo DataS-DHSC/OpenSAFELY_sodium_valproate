@@ -1,3 +1,22 @@
 {
-  "files": {}
+  "files": {
+    "nhsd-primary-care-domain-refsets-epil_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/epil_cod/16243d51",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/epil_cod/16243d51/",
+      "downloaded_at": "2024-02-20 16:01:56.422346Z",
+      "sha": "569fb7772727ccd3a09d6d8c981af5e663619e98"
+    },
+    "nhsd-primary-care-domain-refsets-ethnall_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/ethnall_cod/7d14ca1b",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/ethnall_cod/7d14ca1b/",
+      "downloaded_at": "2024-02-22 14:41:02.375072Z",
+      "sha": "5a75cc815783d76bd26ec23a7224246be41df72e"
+    },
+    "user-g-w-jenkins-dhsc-epilepsy_test.csv": {
+      "id": "user/g-w-jenkins-dhsc/epilepsy_test/7722aec3",
+      "url": "https://www.opencodelists.org/codelist/user/g-w-jenkins-dhsc/epilepsy_test/7722aec3/",
+      "downloaded_at": "2024-02-22 15:37:37.434559Z",
+      "sha": "e557a3f9807068e339c091faf97805e1ca0e0da8"
+    }
+  }
 }
