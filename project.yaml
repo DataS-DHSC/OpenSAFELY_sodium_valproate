@@ -5,7 +5,7 @@ expectations:
 
 actions:
 
-  generate_study_population:
+  generate_dataset:
     run: ehrql:v1 generate-dataset analysis/dataset_definition.py --output output/input.csv.gz
     outputs:
       highly_sensitive:
@@ -17,3 +17,9 @@ actions:
       moderately_sensitive:
         measures: output/measures.csv
 
+  test_function:
+    run: python:latest analysis/plot_measures.py
+    needs: [generate_dataset]
+    outputs:
+      moderately_sensitive:
+        df: test_output.csv

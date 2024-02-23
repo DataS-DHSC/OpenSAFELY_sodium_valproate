@@ -12,5 +12,6 @@ print(OUTPUT_DIR)
 #pathlib.Path(OUTPUT_DIR / "rounded").mkdir(parents=True, exist_ok=True)
 
 
-df = pd.read_csv(OUTPUT_DIR/ 'measures.csv')
-print(df)
+df = pd.read_csv(OUTPUT_DIR/ 'input.csv.gz')
+df2 = df.query('epilepsy == "T"')
+df2.to_csv('test_output.csv')
