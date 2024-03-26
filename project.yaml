@@ -6,7 +6,7 @@ expectations:
 actions:
 
   generate_dataset:
-    run: ehrql:v1 generate-dataset analysis/dataset_definition.py --output output/input.csv.gz
+    run: ehrql:v1 generate-dataset analysis/dataset_definition_q1.py --output output/input.csv.gz
     outputs:
       highly_sensitive:
         cohort: output/input.csv.gz
@@ -18,9 +18,9 @@ actions:
         measures: output/measures.csv
 
   test_function:
-    run: python:latest analysis/plot_measures.py
+    run: python:latest analysis/run_analysi_q1.py
     needs: [generate_dataset]
     outputs:
       moderately_sensitive:
-        df: test_output.csv
-        figure: example_gifure.png
+        df: monthly_perscription_counts.csv
+        figure: monthly_perscription_rate.png

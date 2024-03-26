@@ -9,10 +9,6 @@ from analysis.codelists import epilepsy_test_codelist, sodium_valproate_test_cod
 
 dataset = create_dataset()
 
-# epilepsy_codelist = codelist_from_csv( 
-#     "codelists/nhsd-primary-care-domain-refsets-epil_cod.csv",
-#     column="code"
-# )
 
 index_date = '2020-01-01'
 # #-------------------------------
@@ -77,31 +73,5 @@ dataset.define_population(
 )
 
 # #--------------------------------
-
-# dataset.epilepsy = (
-#     clinical_events.where(
-#         clinical_events.snomedct_code.is_in(epilepsy_test_codelist)
-#     )
-#     .exists_for_patient()
-# )
-
-# dataset.sodium_val = (
-#     medications.where(
-#         medications.dmd_code.is_in(sodium_valproate_test_codelist)
-#     )
-#     .exists_for_patient()
-# )
-
-
-
-# # sodium_val_codes =['13295911000001108','13295911000001108'] #will need a full codelist 
-
-# first_sv_med = (
-#     medications.where(medications.dmd_code.is_in(sodium_val_codes))
-#     .sort_by(medications.date)
-#     .first_for_patient()
-# )
-# dataset.med_date = first_sv_med.date
-# dataset.med_code = first_sv_med.dmd_code
 
 
